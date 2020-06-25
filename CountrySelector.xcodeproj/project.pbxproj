@@ -19,7 +19,7 @@
 		332116F024A47067005E75DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 332116EF24A47067005E75DA /* Assets.xcassets */; };
 		332116F424A47067005E75DA /* CountrySelectorWidgetExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 332116E624A47065005E75DA /* CountrySelectorWidgetExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		332116F924A470D0005E75DA /* CountryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332116E024A462D4005E75DA /* CountryView.swift */; };
-		332116FA24A47117005E75DA /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332116DE24A4628D005E75DA /* Country.swift */; };
+		33C946F424A4CED400505D1D /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = 332116DE24A4628D005E75DA /* Country.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -259,7 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				332116EE24A47065005E75DA /* CountrySelectorWidget.swift in Sources */,
-				332116FA24A47117005E75DA /* Country.swift in Sources */,
+				33C946F424A4CED400505D1D /* Country.swift in Sources */,
 				332116F924A470D0005E75DA /* CountryView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

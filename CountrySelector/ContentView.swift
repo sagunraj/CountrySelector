@@ -23,11 +23,14 @@ struct ContentView: View {
     ]
     
     init() {
-        storeData(with: countries[0])
+        guard let _ = try? JSONDecoder().decode(Country.self,
+                                                          from: selectedCountry) else {
+            storeData(with: countries[0])
+            return
+        }
     }
     
     var body: some View {
-        VStack {
             HStack {
                 ForEach(countries) { country in
                     CountryView(country: country)
@@ -36,7 +39,6 @@ struct ContentView: View {
                         }
                 }
             }
-        }
     }
     
     private func selectCountry(_ country: Country) {

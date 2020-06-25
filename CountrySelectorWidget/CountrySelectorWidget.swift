@@ -16,7 +16,7 @@ struct Provider: TimelineProvider {
     public typealias Entry = SimpleEntry
     
     public func snapshot(with context: Context, completion: @escaping (SimpleEntry) -> ()) {
-        var entry: SimpleEntry!
+        var entry: SimpleEntry
         if let decodedData = try? JSONDecoder().decode(Country.self, from: selectedCountry) {
             entry = SimpleEntry(date: Date(), country: decodedData)
         } else {
@@ -27,7 +27,7 @@ struct Provider: TimelineProvider {
     
     public func timeline(with context: Context, completion: @escaping (Timeline<Entry>) -> ()) {
         var entry: SimpleEntry
-    
+        
         if let decodedData = try? JSONDecoder().decode(Country.self, from: selectedCountry) {
             entry = SimpleEntry(date: Date(), country: decodedData)
         } else {
@@ -46,7 +46,12 @@ struct SimpleEntry: TimelineEntry {
 
 struct PlaceholderView : View {
     var body: some View {
-        Text("Placeholder View")
+        VStack {
+            Text("🇳🇵")
+                .font(.largeTitle)
+            Text("Nepal").font(.title2).multilineTextAlignment(.center)
+            Text("Asia").font(.caption)
+        }
     }
 }
 
@@ -59,10 +64,12 @@ struct CountrySelectorWidgetEntryView : View {
     var body: some View {
         switch family {
         case .systemSmall:
-            Text(entry.country.flag)
-                .font(.largeTitle)
-            Text(entry.country.name).font(.title2).multilineTextAlignment(.center)
-            Text(entry.country.continent).font(.caption)
+            VStack {
+                Text(entry.country.flag)
+                    .font(.largeTitle)
+                Text(entry.country.name).font(.title2).multilineTextAlignment(.center)
+                Text(entry.country.continent).font(.caption)
+            }
         case .systemMedium:
             VStack {
                 Text(entry.country.flag)
